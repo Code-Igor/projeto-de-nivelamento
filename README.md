@@ -1,7 +1,7 @@
 # Descarte Ideal - Projeto de Nivelamento
 
 O Descarte Ideal é um projeto de nivelamento para a disciplina de 'Fábrica de Software'.
-A aplicação tem como objetivo chegar o mais perto possível de um site funcional que dê o auxílio do descarte de diferentes tipos de lixo.
+A aplicação tem como objetivo chegar o mais perto possível de um site funcional que dê o auxílio ao descarte de diferentes tipos de lixo.
 
 ## Configurações
 
