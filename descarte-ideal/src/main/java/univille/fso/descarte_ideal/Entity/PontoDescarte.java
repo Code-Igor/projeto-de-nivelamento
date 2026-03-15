@@ -17,8 +17,17 @@ public class PontoDescarte {
     @Column(nullable = false)
     private String nome;
 
+    @Column (nullable = false, length = 8)
+    private String cep;
+
     @Column(nullable = false)
-    private String endereco;
+    private String bairro;
+
+    @Column(nullable = false)
+    private String rua;
+
+    @Column(nullable = false)
+    private String numero;
 
     @Column(nullable = false)
     private String horarioFuncionamento;
