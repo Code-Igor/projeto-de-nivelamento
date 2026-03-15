@@ -23,7 +23,10 @@ CREATE DATABASE descarte_ideal_db;
 CREATE TABLE ponto_descarte (
 	id BIGINT PRIMARY KEY,
 	nome VARCHAR(255) NOT NULL,
-	endereco TEXT NOT NULL,
+	cep CHAR(8) NOT NULL,
+	bairro TEXT NOT NULL,
+	rua TEXT NOT NULL,
+	numero TEXT NOT NULL,
 	horario_funcionamento TEXT NOT NULL,
 	material_aceito TEXT NOT NULL 
 );
