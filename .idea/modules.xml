@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/descarte-ideal.iml" filepath="$PROJECT_DIR$/.idea/descarte-ideal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/descarte-ideal/descarte-ideal.iml" filepath="$PROJECT_DIR$/descarte-ideal/descarte-ideal.iml" />
     </modules>
   </component>
 </project>
