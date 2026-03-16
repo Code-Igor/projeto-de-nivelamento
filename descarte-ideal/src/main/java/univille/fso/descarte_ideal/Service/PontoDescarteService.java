@@ -3,6 +3,8 @@ package univille.fso.descarte_ideal.Service;
 import org.springframework.stereotype.Service;
 import univille.fso.descarte_ideal.Entity.PontoDescarte;
 import univille.fso.descarte_ideal.Repository.PontoDescarteRepository;
+import univille.fso.descarte_ideal.Repository.SolicitacaoColetaRepository;
+import univille.fso.descarte_ideal.Repository.SolicitacaoDenunciaRepository;
 
 import java.util.List;
 
@@ -13,7 +15,7 @@ public class PontoDescarteService {
     private final PontoDescarteRepository pontoDescarteRepository;
 
     // construtor
-    public PontoDescarteService(PontoDescarteRepository pontoDescarteRepository)  {
+    public PontoDescarteService(PontoDescarteRepository pontoDescarteRepository, SolicitacaoColetaRepository solicitacaoColetaRepository, SolicitacaoDenunciaRepository solicitacaoDenunciaRepository)  {
         this.pontoDescarteRepository = pontoDescarteRepository;
     }
 
@@ -23,7 +25,9 @@ public class PontoDescarteService {
     public List<PontoDescarte> listarTodos() {return pontoDescarteRepository.findAll();}
 
 
-    //
+
+
+    // funcionalidade excluida
 
     public List<PontoDescarte> filtrarPorBairro (String bairro) {
         return pontoDescarteRepository.findByBairro(bairro);

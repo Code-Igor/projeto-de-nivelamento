@@ -2,18 +2,23 @@ package univille.fso.descarte_ideal.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import univille.fso.descarte_ideal.Entity.PontoDescarte;
 import org.springframework.ui.Model;
+import univille.fso.descarte_ideal.Entity.SolicitacaoColeta;
 import univille.fso.descarte_ideal.Service.PontoDescarteService;
+import univille.fso.descarte_ideal.Service.SolicitacaoService;
 
 import java.util.List;
 
 @Controller
 public class DescarteIdealController {
 
-    PontoDescarteService pontoDescarteService;
+    private final PontoDescarteService pontoDescarteService;
+    private final SolicitacaoService solicitacaoService;
 
-    public DescarteIdealController(PontoDescarteService pontoDescarteService) {
+    public DescarteIdealController(PontoDescarteService pontoDescarteService, SolicitacaoService solicitacaoService) {
+        this.solicitacaoService = solicitacaoService;
         this.pontoDescarteService = pontoDescarteService;
     }
 
@@ -23,6 +28,8 @@ public class DescarteIdealController {
         return "index";
     }
 
+
+    // PONTO DE DESCARTE
     @GetMapping("/ponto-descarte")
     public String pontoDescarte(Model model) {
 
@@ -45,15 +52,33 @@ public class DescarteIdealController {
         return "ponto-descarte";
     }
 
+    /// ////////////////////
+    ///
+    ///
+    /// SOLICITACAO DENUNCIA
     @GetMapping("/solicitacao-denuncia")
     public String solicitacaoDenuncia() {
         return "solicitacao-denuncia";
     }
 
+
+    /// ////////////////////
+    ///
+    ///
+    /// SOLICITACAO COLETA
     @GetMapping("/solicitacao-coleta")
     public String solicitacaoColeta() {
         return "solicitacao-coleta";
     }
+
+    // String nomeCompleto, int cpf, String descricao, int cep, String endereco, Model model
+    @PostMapping("/solicitar-coleta")
+    public String solicitarColeta(SolicitacaoColeta solicitacao) {
+        solicitacaoService.salvarColeta(solicitacao);
+
+        return "redirect:/solicitacao-concluida";
+    }
+
 
     @GetMapping("/verificacao-status")
     public String verificacaoStatus() {

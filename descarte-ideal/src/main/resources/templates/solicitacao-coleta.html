@@ -1,10 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>DESCARTE IDEAL</title>
+    <style>
+        .topo{
+            font-family: Impact;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #2DC653;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            padding-left: 20px;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .icone {
+            width: 46;
+            height: 58;
+        }
+
+        body {
+            margin: 0px;
+            background-color: #B7EFC5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        main{
+            margin-top: 80px;
+            flex: 1;
+        }
+
+        footer{
+            width: 100%;
+            background-color: #2DC653;
+            padding-left: 20px
+            font-family: Inria Sans, sans-serif;
+            color: white;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #155d27;
+            font-family: Inria Sans, sans-serif;
+            font-size: 50px;
+        }
+
+        p {
+            font-family: Inria Sans, sans-serif;
+        }
+
+        .header-button {
+            font-size: Small;
+            font-family: Inria Sans, sans-serif;
+            width: 200px;
+            height: 30px;
+            color: white;
+            background-color: #155d27;
+        }
+
+        .filtro-button {
+            padding: 10px;
+            font-size: Medium;
+            font-family: Inria Sans, sans-serif;
+            width: 500px;
+            height: 60px;
+            color: white;
+        }
+
+        button {
+            background-color: #2DC653;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+
+        .padding{
+            padding: 5px;
+        }
+
+
+
+        form {
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        form input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #1f6b33;
+            border-radius: 20px;
+        }
+
+        form button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #31c54d;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #1f6b33;
+        }
+
+        .card {
+            background-color: #31c54d;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 0;
+        }
+
+        .card p {
+            margin: 2px 0;
+        }
+
+        .footer-text{
+            font-size: 10px;
+            padding-left: 10px;
+        }
+
+    </style>
 </head>
+
+
 <body>
+
+<header class="topo">
+    <h3>DESCARTE IDEAL</h3>
+
+    <button class="header-button" onclick="window.location.href='/ponto-descarte'" type="submit">
+        Pontos de Descarte
+    </button>
+
+    <button class="header-button" onclick="window.location.href='/solicitacao-denuncia'" type="submit">
+        Solicitação Denúncia
+    </button>
+
+    <button class="header-button" onclick="window.location.href='/verificacao-status'" type="submit">
+        Verificacao Status
+    </button>
+</header>
+
+
+
+<main>
+    <div>
+        <h1 class="padding"> <b> Solicitação de Coleta de Grande Objeto </b> </h1>
+
+        <div>
+            <form th:action="@{/solicitar-coleta}" method="post">
+                <input type="text" name="nomeCompleto"
+                       placeholder="Nome Completo"
+                       th:value="${nomeCompleto}" required>
+
+                <input type="number" name="cpf"
+                       placeholder="CPF"
+                       maxlength="11"
+                       pattern="[0-9]{11}"
+                       th:value="${cpf}" required>
+
+                <input type="text" name="descricaoObjeto"
+                       placeholder="Descreva o objeto"
+                       th:value="${descricaoObjeto}">
+
+                <input type="number" name="cep"
+                       placeholder="CEP do local que será feito a coleta"
+                       maxlength="8"
+                       pattern="[0-9]{8}"
+                       th:value="${cep}" required>}">
+
+                <input type="text" name="endereco"
+                       placeholder="Bairro, rua e número. Ex: Bom Retiro, Rua Paulo, 88."
+                       th:value="${endereco}" required>
+
+                <button type="submit"> Enviar </button>
+
+            </form>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p class="footer-text"> © 2026 Projeto de Nivelamento. Todos os direitos reservados. </p>
+</footer>
 
 </body>
 </html>
