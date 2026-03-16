@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-@Setter
 @Entity
 @Table(name = "ponto_descarte")
 public class PontoDescarte {
@@ -34,4 +33,15 @@ public class PontoDescarte {
 
     @Column(nullable = false)
     private String materialAceito;
+
+
+    public PontoDescarte(String nome, String cep, String bairro, String rua, String numero, String horarioFuncionamento, String materialAceito) {
+        this.nome = nome;
+        this.cep = cep;
+        this.bairro = bairro;
+        this.rua = rua;
+        this.numero = numero;
+        this.horarioFuncionamento = horarioFuncionamento;
+        this.materialAceito = materialAceito;
+    }
 }
