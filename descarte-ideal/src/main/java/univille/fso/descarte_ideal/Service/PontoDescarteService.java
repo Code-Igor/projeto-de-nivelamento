@@ -18,15 +18,11 @@ public class PontoDescarteService {
     }
 
     // metodos
-    public List<PontoDescarte> pesquisarPorNome (String nome) {
-        return pontoDescarteRepository.findByNomeContainingIgnoreCase(nome);
-    }
+    public List<PontoDescarte> pesquisarPorNome (String nome) {return pontoDescarteRepository.findByNomeContainingIgnoreCase(nome);}
 
     public List<PontoDescarte> filtrarPorBairro (String bairro) {
         return pontoDescarteRepository.findByBairro(bairro);
     }
 
-    public List<PontoDescarte> filtrarPorTipoDescarte (String materialAceito) {
-        return pontoDescarteRepository.findByMaterialAceito(materialAceito);
-    }
+    public List<PontoDescarte> filtrarPorTipoDescarte (String materialAceito) {return pontoDescarteRepository.findByMaterialAceito(materialAceito);}
 }
