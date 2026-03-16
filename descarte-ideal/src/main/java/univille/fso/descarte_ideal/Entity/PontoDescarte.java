@@ -34,6 +34,7 @@ public class PontoDescarte {
     @Column(nullable = false)
     private String materialAceito;
 
+    public PontoDescarte() {}
 
     public PontoDescarte(String nome, String cep, String bairro, String rua, String numero, String horarioFuncionamento, String materialAceito) {
         this.nome = nome;
