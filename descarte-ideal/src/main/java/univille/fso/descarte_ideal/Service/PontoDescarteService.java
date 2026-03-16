@@ -20,9 +20,8 @@ public class PontoDescarteService {
     // metodos
     public List<PontoDescarte> pesquisarPorNome (String nome) {return pontoDescarteRepository.findByNomeContainingIgnoreCase(nome);}
 
-    public List<PontoDescarte> listarTodos() {
-        return pontoDescarteRepository.findAll();
-    }
+    public List<PontoDescarte> listarTodos() {return pontoDescarteRepository.findAll();}
+
 
     //
 

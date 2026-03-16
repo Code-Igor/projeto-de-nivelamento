@@ -32,7 +32,7 @@ public class InicializadorDados {
                                 "Rua São Brás",
                                 "184",
                                 "Segunda a sexta, 08:00 às 17:00",
-                                "Resíduos eletrônicos, recicláveis"
+                                "Resíduos eletrônicos, pequenos eletrodomésticos, recicláveis"
                         ),
                         new PontoDescarte(
                                 "Unidade Regional de Obras Sudeste",
@@ -41,7 +41,7 @@ public class InicializadorDados {
                                 "Rua Ana Maria Roncálio de Souza",
                                 "59",
                                 "Segunda a sexta, 08:00 às 17:00",
-                                "Resíduos eletrônicos, recicláveis"
+                                "Resíduos eletrônicos, pequenos eletrodomésticos, recicláveis"
                         ),
                         new PontoDescarte(
                                 "Unidade Regional de Obras Nordeste",
@@ -50,7 +50,7 @@ public class InicializadorDados {
                                 "Rua Theonesto Westrupp",
                                 "565",
                                 "Segunda a sexta, 08:00 às 17:00",
-                                "Resíduos eletrônicos, recicláveis"
+                                "Resíduos eletrônicos, pequenos eletrodomésticos, recicláveis"
                         ),
                         new PontoDescarte(
                                 "Ecoponto Parque São Francisco",
@@ -59,7 +59,7 @@ public class InicializadorDados {
                                 "Rua Benício Felipe da Silva",
                                 "45",
                                 "Segunda a sexta, 08:00 às 17:00",
-                                "Recicláveis, resíduos volumosos"
+                                "Recicláveis, pilhas, baterias, óleo de cozinha, resíduos volumosos"
                         )
                 ));
             }
