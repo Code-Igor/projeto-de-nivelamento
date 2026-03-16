@@ -18,10 +18,6 @@
             padding-left: 20px;
         }
 
-        .icone {
-            width: 46;
-            height: 58;
-        }
 
         body {
             margin: 0px;
@@ -46,22 +42,43 @@
         }
 
         .footer-text{
-            padding-left:20px;
+            font-size: 10px;
+            padding-left: 10px;
         }
 
 
         h1 {
-            text-align: center;
+            padding-left: 215px;
+            text-align: left;
             color: #155d27;
             font-family: Inria Sans, sans-serif;
             font-size: 60px;
+        }
+
+        h2 {
+            padding-left: 215px;
+            padding-top: 10px;
+            text-align: left;
+            color: #155d27;
+            font-family: Inria Sans, sans-serif;
+            font-size: 50px;
         }
 
         p {
             font-family: Inria Sans, sans-serif;
         }
 
+        body p{
+            padding-left: 215px;
+            padding-right: 215px;
+            font-size: 20px;
+            text-align: justify;
+        }
+
+
+
         button {
+
             font-size: Large;
             font-family: Inria Sans, sans-serif;
             width: 1000px;
@@ -79,7 +96,18 @@
 
         .padding{
             padding: 5px;
+            display: flex;
+            justify-content: center;
         }
+
+        hr{
+            border: none;
+            height: 3px;
+            background-color: #2DC653;
+            width: 90%;
+            margin: 40px auto;
+        }
+
 
     </style>
 </head>
@@ -96,10 +124,26 @@
 <main>
     <div>
 
-        <h1 class="padding"> <b> DESCARTE IDEAL </b> </h1>
+        <div>
+            <h1> <b> DESCARTE IDEAL </b> </h1>
 
-        <div class="padding">
-            <p> Descarte Ideal </p>
+            <p> O Descarte Ideal é uma aplicação que tem como objetivo dar informações ao público geral e auxiliar no descarte de diferentes resíduos</p>
+            <hr>
+            <h2> Como descartar? </h2>
+            <p>
+                Para detalhes sobre o descarte dos tipos de resíduo,
+                é recomendado seguir os padrões municipais estabelecidos pela Prefeitura Municipal,
+                você pode acessar-los pelo próprio <a href="https://www.joinville.sc.gov.br/servicos/como-descartar-residuos/">site da prefeitura</a>.
+
+            </p>
+
+            <hr>
+            <h2> Funcionalidades do Descarte Ideal</h2>
+            <p>
+                Aqui no Descarte Ideal você acessar os pontos de descarte municipais, vendo os seus endereços e tipos de materiais aceitos para descarte.
+                Além disso você pode solicitar coleta de grandes objetos para descarte, ajudar a cuidarmos da nossa cidade ao denunciar descartes irregulares e
+                ver o status das suas solicitações!
+            </p>
         </div>
 
         <div class="padding">
@@ -128,9 +172,10 @@
     </div>
 </main>
 
+
+
+</body>
 <footer>
     <p class="footer-text"> © 2026 Projeto de Nivelamento. Todos os direitos reservados. </p>
 </footer>
-
-</body>
 </html>

@@ -14,8 +14,10 @@
             background-color: #2DC653;
             color: white;
             display: flex;
-            align-items: center;
+            flex-direction: row;
             padding-left: 20px;
+            align-items: center;
+            gap: 40px;
         }
 
         .icone {
@@ -61,9 +63,10 @@
         .header-button {
             font-size: Small;
             font-family: Inria Sans, sans-serif;
-            width: 100px;
-            height: 40px;
+            width: 200px;
+            height: 30px;
             color: white;
+            background-color: #155d27;
         }
 
         .filtro-button {
@@ -137,6 +140,11 @@
             margin: 2px 0;
         }
 
+        .footer-text{
+            font-size: 10px;
+            padding-left: 10px;
+        }
+
     </style>
 </head>
 
@@ -148,6 +156,14 @@
 
     <button class="header-button" onclick="window.location.href='/solicitacao-denuncia'" type="submit">
         Solicitação Denúncia
+    </button>
+
+    <button class="header-button" onclick="window.location.href='/solicitacao-coleta'" type="submit">
+        Solicitação Coleta
+    </button>
+
+    <button class="header-button" onclick="window.location.href='/verificacao-status'" type="submit">
+        Verificacao Status
     </button>
 </header>
 
@@ -162,11 +178,15 @@
                        th:value="${pesquisa}" required>
 
                 <button type="submit"> Pesquise </button>
+
+                <a th:href="@{/ponto-descarte}">
+                    <button type="button">Limpar Pesquisa</button>
+                </a>
             </form>
         </div>
 
 
-        <!--  funcionalidade extra excluida
+        <!--  funcionalidades extra excluida
         <div>
             <button class="filtro-button" onclick="window.location.href='/filtrar-bairro'" type="submit">
                 Filtrar por bairro
@@ -182,8 +202,9 @@
 
             <div class="card" th:each="ponto : ${pontos}">
                 <h3 th:text="${ponto.nome}"></h3>
-                <p th:text="${ponto.rua}"></p>
+                <p th:text="${ponto.rua + ', ' + ponto.numero}"></p>
                 <p th:text="${ponto.bairro}"></p>
+                <p th:text="${ponto.cep}"></p>
                 <p th:text="${ponto.materialAceito}"></p>
             </div>
 
@@ -193,7 +214,7 @@
 </main>
 
 <footer>
-    <p> © 2026 Projeto de Nivelamento. Todos os direitos reservados. </p>
+    <p class="footer-text"> © 2026 Projeto de Nivelamento. Todos os direitos reservados. </p>
 </footer>
 
 </body>
