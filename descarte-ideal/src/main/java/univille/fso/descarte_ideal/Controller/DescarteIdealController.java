@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import univille.fso.descarte_ideal.Entity.PontoDescarte;
 import org.springframework.ui.Model;
 import univille.fso.descarte_ideal.Entity.SolicitacaoColeta;
+import univille.fso.descarte_ideal.Entity.SolicitacaoDenuncia;
 import univille.fso.descarte_ideal.Service.PontoDescarteService;
 import univille.fso.descarte_ideal.Service.SolicitacaoService;
 
@@ -61,6 +62,12 @@ public class DescarteIdealController {
         return "solicitacao-denuncia";
     }
 
+    @PostMapping("/solicitar-denuncia")
+    public String solicitarDenuncia(SolicitacaoDenuncia solicitacao) {
+        solicitacaoService.salvarDenuncia(solicitacao);
+
+        return "redirect:/solicitacao-concluida";
+    }
 
     /// ////////////////////
     ///
@@ -77,6 +84,11 @@ public class DescarteIdealController {
         solicitacaoService.salvarColeta(solicitacao);
 
         return "redirect:/solicitacao-concluida";
+    }
+
+    @GetMapping("/solicitacao-concluida")
+    public String solicitacaoConcluida() {
+        return "solicitacao-concluida";
     }
 
 

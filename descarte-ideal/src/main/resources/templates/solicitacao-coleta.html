@@ -20,11 +20,6 @@
             gap: 40px;
         }
 
-        .icone {
-            width: 46;
-            height: 58;
-        }
-
         body {
             margin: 0px;
             background-color: #B7EFC5;
@@ -69,14 +64,6 @@
             background-color: #155d27;
         }
 
-        .filtro-button {
-            padding: 10px;
-            font-size: Medium;
-            font-family: Inria Sans, sans-serif;
-            width: 500px;
-            height: 60px;
-            color: white;
-        }
 
         button {
             background-color: #2DC653;
@@ -95,21 +82,21 @@
 
 
 
-        form {
-            width: 80%;
-            margin: 20px auto;
+        form{
             display: flex;
-            gap: 10px;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        form input {
-            flex: 1;
-            padding: 10px;
+        form input{
+            padding: 12px;
             border: 2px solid #1f6b33;
-            border-radius: 20px;
+            border-radius: 8px;
+            font-size: 16px;
         }
 
         form button {
+            color: white;
             padding: 10px 15px;
             border: none;
             background-color: #31c54d;
@@ -118,27 +105,6 @@
         }
 
 
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            border: 2px solid #1f6b33;
-        }
-
-        .card {
-            background-color: #31c54d;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .card h3 {
-            margin: 0;
-        }
-
-        .card p {
-            margin: 2px 0;
-        }
 
         .footer-text{
             font-size: 10px;
@@ -193,7 +159,7 @@
                        placeholder="CEP do local que será feito a coleta"
                        maxlength="8"
                        pattern="[0-9]{8}"
-                       th:value="${cep}" required>}">
+                       th:value="${cep}" required>
 
                 <input type="text" name="endereco"
                        placeholder="Bairro, rua e número. Ex: Bom Retiro, Rua Paulo, 88."
